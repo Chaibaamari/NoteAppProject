@@ -2,7 +2,7 @@
   "name": "refs-demo-project",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://chaibaamari.github.io/NoteApp/",
+  "homepage": "https://chaibaamari.github.io/NoteApp",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
