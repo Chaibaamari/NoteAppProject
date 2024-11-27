@@ -1,8 +1,10 @@
 import SideBar from "./components/SideBar.jsx";
 import MainContainer from "./components/MainContainer.jsx";
-import { useState  , useEffect} from "react";
+import { useState, useEffect } from "react";
 import NewProject from "./components/NewProject";
 import NoteInformation from "./components/NoteInformation.jsx";
+
+// hello this project off all my product
 
 function App() {
   // const [addingAnewProject, setAddingNewProject] = useState({
@@ -33,7 +35,7 @@ function App() {
   function addTask(task) {
     const NewTask = {
       Task: task,
-      projectId : addingAnewProject.SelectNewProjectId,
+      projectId: addingAnewProject.SelectNewProjectId,
       taskId: Math.random(),
     };
     setAddingNewProject((prev) => {
@@ -42,15 +44,12 @@ function App() {
         tasks: [...prev.tasks, NewTask],
       };
     });
-  
   }
   function deletTask(taskId) {
     setAddingNewProject((prev) => {
       return {
         ...prev,
-        tasks: addingAnewProject.tasks.filter(
-          (ele) => ele.taskId !== taskId
-        ),
+        tasks: addingAnewProject.tasks.filter((ele) => ele.taskId !== taskId),
       };
     });
   }

@@ -7,7 +7,7 @@ const Modle = forwardRef(function Modle({ children, buttonClose }, ref) {
     useImperativeHandle(ref, () => {
         return {
             open() {
-                dialog.current.showModal();
+                dialog.current.showModal(); // chaiba amari 
             }
         }
     })
