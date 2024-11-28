@@ -4,16 +4,7 @@ import { useState, useEffect } from "react";
 import NewProject from "./components/NewProject";
 import NoteInformation from "./components/NoteInformation.jsx";
 
-// hello this project off all my product
-
 function App() {
-  // const [addingAnewProject, setAddingNewProject] = useState({
-  //   SelectNewProjectId: undefined,
-  //   prject: [],
-  //   tasks: [],
-  // });
-
-  // window.localStorage.setItem("project", addingAnewProject.prject);
   const initialState = JSON.parse(
     localStorage.getItem("addingAnewProject")
   ) || {
@@ -24,7 +15,6 @@ function App() {
 
   const [addingAnewProject, setAddingNewProject] = useState(initialState);
 
-  // Save state to local storage whenever it changes
   useEffect(() => {
     localStorage.setItem(
       "addingAnewProject",
@@ -33,11 +23,17 @@ function App() {
   }, [addingAnewProject]);
 
   function addTask(task) {
+    if (task == "") {
+      alert("please enter a task");
+      return;
+    }
+
     const NewTask = {
       Task: task,
       projectId: addingAnewProject.SelectNewProjectId,
       taskId: Math.random(),
     };
+
     setAddingNewProject((prev) => {
       return {
         ...prev,
